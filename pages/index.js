@@ -101,7 +101,7 @@ export default function Home() {
               </div>
               <div className={styles.input}>
                 <label htmlFor="project" className={styles.input_label}>
-                  What's your project about?
+                  What is your project about?
                 </label>
                 <input
                   required

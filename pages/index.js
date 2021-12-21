@@ -6,10 +6,6 @@ import { useForm, ValidationError } from "@formspree/react";
 export default function Home() {
   const [state, handleSubmit] = useForm("xjvlvqrd");
 
-  if (state.succeeded) {
-    return <p>Thanks for your submission!</p>;
-  }
-
   return (
     <div className={styles.container}>
       <Head>
@@ -26,6 +22,14 @@ export default function Home() {
 
       <main className={styles.main}>
         <div className={styles.main_chinois}>
+          <div className={`${styles.logo} ${styles.logo_mobile}`}>
+            <Image
+              src="/logo_black.svg"
+              alt="Logo Chinoismedia"
+              width={75}
+              height={75}
+            />
+          </div>
           <h1 className={styles.title}>
             Hi, welcome to Chinoismedia
             <span className={styles.title_green}>.</span>
@@ -34,9 +38,10 @@ export default function Home() {
             I will be launching my website very soon. In the meantime be free to
             contact me for more information.
           </p>
+          <div className={styles.scroll_down}></div>
         </div>
         <div className={styles.main_contact}>
-          <div className={styles.logo}>
+          <div className={`${styles.logo} ${styles.logo_desktop}`}>
             <Image
               src="/logo.svg"
               alt="Logo Chinoismedia"
@@ -45,10 +50,10 @@ export default function Home() {
             />
           </div>
 
-          <div>
+          <div className={styles.contact_content}>
             <div className={styles.contact_header}>
               <h2 className={styles.subtitle}>Contact us</h2>
-              <div className={styles.company}>
+              {/* <div className={styles.company}>
                 <p className={`${styles.paragraph} ${styles.paragraph_white}`}>
                   Are you a company?
                 </p>
@@ -58,7 +63,7 @@ export default function Home() {
                   id="switch"
                 />
                 <label className={styles.toggle_label} htmlFor="switch"></label>
-              </div>
+              </div> */}
             </div>
 
             <form className={styles.form} onSubmit={handleSubmit}>
@@ -124,7 +129,7 @@ export default function Home() {
                 </label>
                 <textarea
                   required
-                  rows="5"
+                  rows="4"
                   className={styles.input_field}
                   placeholder="Tell something more about your project.."
                   name="message"
@@ -150,27 +155,37 @@ export default function Home() {
                 errors={state.errors}
               />
             </form>
-            <div className={styles.footer}>
-              <div className={styles.socials}>
-                <div className={styles.socials_icon}>
-                  <Image
-                    src="/instagram.svg"
-                    alt="Logo Instagram"
-                    width={20}
-                    height={20}
-                  />
-                </div>
-                <div className={styles.socials_icon}>
-                  <Image
-                    src="/linkedn.svg"
-                    alt="Logo Linkedn"
-                    width={20}
-                    height={20}
-                  />
-                </div>
-              </div>
-              <Image src="/corner.svg" alt="Corner" width={20} height={20} />
+          </div>
+          <div className={styles.footer}>
+            <div className={styles.socials}>
+              <a
+                href="https://www.instagram.com/chinoismedia/"
+                className={styles.socials_icon}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Image
+                  src="/instagram.svg"
+                  alt="Logo Instagram"
+                  width={20}
+                  height={20}
+                />
+              </a>
+              <a
+                className={styles.socials_icon}
+                href="https://www.linkedin.com/in/quinten-lemmens-79666914a/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Image
+                  src="/linkedn.svg"
+                  alt="Logo Linkedn"
+                  width={20}
+                  height={20}
+                />
+              </a>
             </div>
+            <Image src="/corner.svg" alt="Corner" width={20} height={20} />
           </div>
         </div>
       </main>

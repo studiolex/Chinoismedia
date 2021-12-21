@@ -1,12 +1,12 @@
 .main {
   display: flex;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .main_chinois,
 .main_contact {
   width: 50vw;
-  padding: 4% 7%;
+  padding: 5vh 5vw;
 }
 
 .main_contact {
@@ -14,6 +14,9 @@
     url("/background.png");
   background-size: 200%;
   background-position: 50% 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .main_chinois {
@@ -25,7 +28,10 @@
 .logo {
   margin: 0 auto;
   text-align: center;
-  margin-bottom: 5rem;
+}
+
+.logo_mobile {
+  display: none;
 }
 
 .title {
@@ -76,17 +82,64 @@
   font-size: 1.3rem;
 }
 
+.scroll_down {
+  width: 2rem;
+  height: 4rem;
+  border: 3px solid #191919;
+  border-radius: 60px;
+  position: relative;
+  z-index: 10;
+  display: none;
+}
+.scroll_down::before {
+  content: "";
+  width: 1rem;
+  height: 1rem;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #191919;
+  border-radius: 50%;
+  opacity: 1;
+  animation: wheel 1.8s infinite;
+  -webkit-animation: wheel 1.8s infinite;
+}
+
+@keyframes wheel {
+  to {
+    opacity: 0;
+    top: 2rem;
+  }
+}
+
+@-webkit-keyframes wheel {
+  to {
+    opacity: 0;
+    top: 2rem;
+  }
+}
+
+.contact_content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  margin: 1.5rem 0;
+}
+
 .contact_header {
   display: flex;
   justify-content: space-between;
 }
 
 .form {
-  margin: 4rem 0;
+  margin: 5vh 0;
 }
 
 .input {
-  margin-bottom: 3rem;
+  margin-bottom: 3vh;
 }
 
 .input_field {
@@ -94,7 +147,7 @@
   border: 0.1rem solid #fbfaf8;
   width: 100%;
   padding: 1.2rem;
-  margin-top: 0.8rem;
+  margin-top: 0.6rem;
   font-family: "Rubik", sans-serif;
   font-size: 1.3rem;
   font-weight: 300;
@@ -131,8 +184,24 @@
 .input_field::placeholder {
   font-family: "Rubik", sans-serif;
   font-size: 1.3rem;
-  font-weight: 300;
+  font-weight: 400;
   color: #302f2f;
+}
+
+.input_field:-webkit-autofill,
+.input_field:-webkit-autofill:hover,
+.input_field:-webkit-autofill:focus {
+  background-color: #302f2f;
+  border: 0.1rem solid #fbfaf8;
+  font-family: "Rubik", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 300;
+  color: #fbfaf8;
+  font-style: italic;
+  border: 0.1rem solid #fbfaf8;
+  -webkit-text-fill-color: #fbfaf8;
+  -webkit-box-shadow: 0 0 0px 1000px #302f2f inset;
+  transition: background-color 5000s ease-in-out 0s;
 }
 
 .socials,
@@ -195,5 +264,81 @@
   width: 3rem;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1000px) {
+  .title {
+    font-size: 3.9rem;
+  }
+  .paragraph {
+    width: 100%;
+  }
+}
+
+@media (max-width: 800px) {
+  .main {
+    flex-direction: column;
+  }
+
+  .main_chinois,
+  .main_contact {
+    width: 100vw;
+  }
+
+  .main_chinois {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .logo_desktop {
+    display: none;
+  }
+
+  .logo_mobile {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5ch;
+  }
+
+  .scroll_down {
+    display: flex;
+    margin: 0 auto;
+    margin-top: auto;
+  }
+
+  .form {
+    margin: 8rem 0;
+  }
+
+  .main_contact {
+    padding: 10vh 5vw 5vh 5vw;
+  }
+
+  .input {
+    margin-bottom: 4rem;
+  }
+
+  .input_field {
+    font-size: 1.4rem;
+    margin-top: 1rem;
+  }
+
+  .input_label {
+    font-size: 1.4rem;
+  }
+
+  .input_error {
+    font-size: 1.2rem;
+  }
+
+  .input_field::placeholder {
+    font-family: "Rubik", sans-serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #302f2f;
+  }
+
+  .form_button {
+    font-size: 1.4rem;
+    margin-top: 2rem;
+  }
 }

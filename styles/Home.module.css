@@ -274,6 +274,13 @@
 }
 
 @media (max-width: 800px) {
+  .title {
+    font-size: 3.5rem;
+  }
+
+  .paragraph {
+    font-size: 1.4rem;
+  }
   .main {
     flex-direction: column;
   }
@@ -281,6 +288,7 @@
   .main_chinois,
   .main_contact {
     width: 100vw;
+    padding: 3vh 5vw;
   }
 
   .main_chinois {

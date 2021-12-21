@@ -111,6 +111,14 @@
   color: #fbfaf8;
 }
 
+.input_error {
+  color: red;
+  font-family: Rubik, sans-serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
 .form_button {
   font-family: "Rubik", sans-serif;
   font-size: 1.3rem;

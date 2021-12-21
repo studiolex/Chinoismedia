@@ -4,7 +4,7 @@ import styles from "../styles/Home.module.css";
 import { useForm, ValidationError } from "@formspree/react";
 
 export default function Home() {
-  const [state, handleSubmit] = useForm(process.env.NEXT_PUBLIC_FORM);
+  const [state, handleSubmit] = useForm("xjvlvqrd");
 
   if (state.succeeded) {
     return <p>Thanks for your submission!</p>;
@@ -67,6 +67,7 @@ export default function Home() {
                   Your name
                 </label>
                 <input
+                  required
                   className={styles.input_field}
                   placeholder="Your name"
                   name="name"
@@ -74,6 +75,7 @@ export default function Home() {
                   id="name"
                 ></input>
                 <ValidationError
+                  className={styles.input_error}
                   prefix="Name"
                   field="name"
                   errors={state.errors}
@@ -84,6 +86,7 @@ export default function Home() {
                   Your E-mail
                 </label>
                 <input
+                  required
                   className={styles.input_field}
                   placeholder="Your E-mail"
                   name="mail"
@@ -101,6 +104,7 @@ export default function Home() {
                   What's your project about?
                 </label>
                 <input
+                  required
                   className={styles.input_field}
                   placeholder="What's your project about?"
                   name="project"
@@ -108,6 +112,7 @@ export default function Home() {
                   id="project"
                 ></input>
                 <ValidationError
+                  className={styles.input_error}
                   prefix="Project"
                   field="project"
                   errors={state.errors}
@@ -118,6 +123,7 @@ export default function Home() {
                   Project description
                 </label>
                 <textarea
+                  required
                   rows="5"
                   className={styles.input_field}
                   placeholder="Tell something more about your project.."
@@ -125,6 +131,7 @@ export default function Home() {
                   id="message"
                 ></textarea>
                 <ValidationError
+                  className={styles.input_error}
                   prefix="Message"
                   field="message"
                   errors={state.errors}
@@ -138,6 +145,10 @@ export default function Home() {
               >
                 Send project
               </button>
+              <ValidationError
+                className={styles.input_error}
+                errors={state.errors}
+              />
             </form>
             <div className={styles.footer}>
               <div className={styles.socials}>

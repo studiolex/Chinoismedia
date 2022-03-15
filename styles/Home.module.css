@@ -16,7 +16,7 @@
   background-position: 50% 50%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  /* justify-content: space-between; */
 }
 
 .main_chinois {
@@ -127,6 +127,7 @@
   display: flex;
   flex-direction: column;
   margin: 1.5rem 0;
+  margin-top: 10vh;
 }
 
 .contact_header {
@@ -210,6 +211,10 @@
   justify-content: space-between;
 }
 
+.footer {
+  margin-top: auto;
+}
+
 .socials_icon {
   margin-right: 1.5rem;
   display: flex;
@@ -262,6 +267,34 @@
 
 .toggle_label:active:after {
   width: 3rem;
+}
+
+.form_confirm {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 30vh;
+}
+
+.form_confirm__text {
+  font-family: "Rubik", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 1.6;
+  margin: 0 auto;
+  color: #fbfaf8;
+}
+.form_confirm__text_small {
+  font-family: "Rubik", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 300;
+  line-height: 1.6;
+  margin: 0 auto;
+  font-style: italic;
+  color: #00e04c;
+  padding-bottom: 10rem;
 }
 
 @media (max-width: 1000px) {
@@ -348,5 +381,13 @@
   .form_button {
     font-size: 1.4rem;
     margin-top: 2rem;
+  }
+
+  .contact_content {
+    margin-top: unset;
+  }
+
+  .form_confirm {
+    margin-top: 10vh;
   }
 }

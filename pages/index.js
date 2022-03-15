@@ -67,7 +67,7 @@ export default function Home() {
 
           <div className={styles.contact_content}>
             <div className={styles.contact_header}>
-              <h2 className={styles.subtitle}>Contact us</h2>
+              <h2 className={styles.subtitle}>Get in touch</h2>
               {/* <div className={styles.company}>
                 <p className={`${styles.paragraph} ${styles.paragraph_white}`}>
                   Are you a company?
